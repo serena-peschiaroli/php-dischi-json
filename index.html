@@ -22,7 +22,7 @@
                         <div class="card">
                             <img :src="disk.poster" class="card-img-top" alt="Disk Poster">
                             <div class="card-body">
-                                <h4 class="card-title">{{ disk.title }}</h5>
+                                <h4 class="card-title">{{ disk.title }}</h4>
                                 <p class="card-text">{{ disk.author }}</p>
                                 <h5>{{ disk.year }}</h5>
                             </div>
@@ -30,13 +30,18 @@
                         </div>
                     </div>
 
-                    <!-- per il disco selezionato -->
-                    <div v-if="selectedDisk" class="details">
-                        <h2>{{ selectedDisk.title }} Dettagli: </h2>
-                        <p><strong>autore:</strong> {{ selectedDisk.author }}</p>
-                        <p><strong>anno:</strong> {{ selectedDisk.year }}</p>
-                        <p><strong>genere:</strong> {{ selectedDisk.genre }}</p>
-                        <button class="btn" @click="hideDetails">Chiudi</button>
+                    <!-- per il disco selezionato , classe condizionale quando selectedDisk-->
+                    <div v-if="selectedDisk" class="details" :class="{ 'details-expanded': selectedDisk }">
+                        <div class="details-card">
+                            <img :src="selectedDisk.poster" class="details-img-top" alt="Disk Poster">
+                            
+                            <h2>{{ selectedDisk.title }} Dettagli: </h2>
+                            <p><strong>autore:</strong> {{ selectedDisk.author }}</p>
+                            <p><strong>anno:</strong> {{ selectedDisk.year }}</p>
+                            <p><strong>genere:</strong> {{ selectedDisk.genre }}</p>
+                            <button class="btn" @click="hideDetails">Chiudi</button> 
+                        </div>
+                        
                     </div>
                 </div>
 

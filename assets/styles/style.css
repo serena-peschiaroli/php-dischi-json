@@ -24,20 +24,47 @@ header {
     height: calc(100% - 5rem);
     
     background-color: #1D2D3C;
+    padding: 2rem;
 }
 
 .row {
-    width: 80%;
+    width: 100%;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    gap: 1rem;
+    gap: 2rem;
     justify-content: center;
     align-items: center;
-    margin: 0 auto;
+    
 }
 
 .col {
-    width: calc((90% / 3) );
+    width: calc((70% / 3) );
     background-color: #06131F;
+    border-radius: 10px;
+}
+
+.card {
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    gap: 1rem;
+}
+
+.card-img-top {
+    width: 80%;
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    color: white;
 }

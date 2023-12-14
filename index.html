@@ -17,14 +17,13 @@
             </header>
             <div class="container">
                 <div class="row">
-                    <div class="col" v-for="disk in diskList" :key="disk.title" class="card">
+                    <div class="col" v-for="disk in diskList" :key="disk.title">
                         <div class="card">
                             <img :src="disk.poster" class="card-img-top" alt="Disk Poster">
                             <div class="card-body">
-                                <h5 class="card-title">{{ disk.title }}</h5>
+                                <h4 class="card-title">{{ disk.title }}</h5>
                                 <p class="card-text">{{ disk.author }}</p>
                                 <p class="card-text">{{ disk.year }}</p>
-                                <p class="card-text">{{ disk.genre }}</p>
                             </div>
                             
                         </div>

@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+img {
+    width: 100%;
+}
+
 /* layout */
 
 .wrapper {
@@ -20,4 +24,20 @@ header {
     height: calc(100% - 5rem);
     
     background-color: #1D2D3C;
+}
+
+.row {
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.col {
+    width: calc((90% / 3) );
+    background-color: #06131F;
 }

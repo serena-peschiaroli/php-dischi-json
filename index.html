@@ -17,16 +17,26 @@
             </header>
             <div class="container">
                 <div class="row">
-                    <div class="col" v-for="disk in diskList" :key="disk.title">
+                    <!-- aggiunta al click per mostrare dettagli -->
+                    <div class="col" v-for="disk in diskList" :key="disk.title" @click="displayDiskDetails(disk)">
                         <div class="card">
                             <img :src="disk.poster" class="card-img-top" alt="Disk Poster">
                             <div class="card-body">
                                 <h4 class="card-title">{{ disk.title }}</h5>
                                 <p class="card-text">{{ disk.author }}</p>
-                                <p class="card-text">{{ disk.year }}</p>
+                                <h5>{{ disk.year }}</h5>
                             </div>
                             
                         </div>
+                    </div>
+
+                    <!-- per il disco selezionato -->
+                    <div v-if="selectedDisk" class="details">
+                        <h2>{{ selectedDisk.title }} Dettagli: </h2>
+                        <p><strong>autore:</strong> {{ selectedDisk.author }}</p>
+                        <p><strong>anno:</strong> {{ selectedDisk.year }}</p>
+                        <p><strong>genere:</strong> {{ selectedDisk.genre }}</p>
+                        <button class="btn" @click="hideDetails">Chiudi</button>
                     </div>
                 </div>
 

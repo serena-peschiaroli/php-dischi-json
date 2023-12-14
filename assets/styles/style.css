@@ -38,6 +38,8 @@ header {
     
 }
 
+/*colonna per cards*/
+
 .col {
     width: calc((70% / 3) );
     background-color: #112030;
@@ -48,7 +50,7 @@ header {
     justify-content: center;
     align-items: center;
 }
-
+/*cards con info disco*/
 .card {
     padding-top: 2rem;
     padding-bottom: 1rem;
@@ -86,6 +88,7 @@ header {
 .details {
     display: none;
 }
+/* card quando viene cliccato un disco*/
 
 .details-expanded {
     display: flex;
@@ -118,3 +121,18 @@ header {
     width: 50%;
 }
 
+/*btn di chiusura card*/
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 1.5rem;
+    border: 1px solid white;
+    background: rgba(128, 128, 128, 0.2);
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+    border: none;
+    color: white;
+    cursor: pointer;
+}

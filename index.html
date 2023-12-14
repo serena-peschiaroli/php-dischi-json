@@ -17,7 +17,7 @@
             </header>
             <div class="container">
                 <div class="row">
-                    <!-- aggiunta al click per mostrare dettagli -->
+                    <!-- aggiunta evento al click per mostrare dettagli -->
                     <div class="col" v-for="disk in diskList" :key="disk.title" @click="displayDiskDetails(disk)">
                         <div class="card">
                             <img :src="disk.poster" class="card-img-top" alt="Disk Poster">
@@ -30,16 +30,16 @@
                         </div>
                     </div>
 
-                    <!-- per il disco selezionato , classe condizionale quando selectedDisk-->
+                    <!-- se c'è un disco selezionato ,  applica classe-->
                     <div v-if="selectedDisk" class="details" :class="{ 'details-expanded': selectedDisk }">
+                        <button class="close-btn" @click="hideDetails">&times;</button> <!-- btn x chiudere -->
                         <div class="details-card">
                             <img :src="selectedDisk.poster" class="details-img-top" alt="Disk Poster">
-                            
-                            <h2>{{ selectedDisk.title }} Dettagli: </h2>
+                            <h2> Dettagli:</h2>
+                            <h2>{{ selectedDisk.title }} </h2>
                             <p><strong>autore:</strong> {{ selectedDisk.author }}</p>
                             <p><strong>anno:</strong> {{ selectedDisk.year }}</p>
                             <p><strong>genere:</strong> {{ selectedDisk.genre }}</p>
-                            <button class="btn" @click="hideDetails">Chiudi</button> 
                         </div>
                         
                     </div>

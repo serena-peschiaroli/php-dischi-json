@@ -13,8 +13,8 @@ if (isset($_GET['disk_id'])) {
 
     // headers per non incorrere in blocco cors
     header('Access-Control-Allow-Origin: http://127.0.0.1:5500');
-    header('Access-Control-Allow-Methods: GET');
-    header('Access-Control-Allow-Headers: Content-Type');
+    header('Access-Control-Allow-Headers: X-REQUESTED-WITH');
+    // header x richiesta
     header('Content-Type: application/json');
 
     // ritorna tutti i dettagli del disco selezionato
@@ -26,8 +26,8 @@ if (isset($_GET['disk_id'])) {
 
     //headers anti-cors
     header('Access-Control-Allow-Origin: http://127.0.0.1:5500');
-    header('Access-Control-Allow-Methods: GET');
-    header('Access-Control-Allow-Headers: Content-Type');
+    header('Access-Control-Allow-Headers: X-REQUESTED-WITH');
+    // header x richiesta
     header('Content-Type: application/json');
 
     // ritorna la lista di tutti i dischi

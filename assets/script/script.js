@@ -6,7 +6,7 @@ createApp({
             //inizializza selectedDisk=null
             selectedDisk: null,
             diskList: [],
-            apiUrl:'http://localhost:8888/Boolean/php-dischi-json/assets/server/server.php'
+            apiUrl:'http://localhost/Boolean/php-dischi-json/assets/server/server.php'
         }
         
     },
@@ -14,13 +14,22 @@ createApp({
         //richeista axios a server
         axios.get(this.apiUrl).then((resp) => {
             this.diskList = resp.data;
-            console.log(this.diskList);
+            console.log(resp.data);
         });
     },
     methods: {
         //funzione x mostrare dettagli
         displayDiskDetails(disk) {
-            this.selectedDisk = disk;
+            //inserisci parametri per richiesta su disco singolo
+            axios.get(this.apiUrl, {
+                params: {
+                    disk_id: disk.id
+                }
+            }).then((resp) => {
+                // aggiorna diskco selezionato
+                this.selectedDisk = resp.data[0];
+                console.log(resp.data[0]);
+            });
         },
         //funzione al click per nascondere dettagli
         hideDetails() {
